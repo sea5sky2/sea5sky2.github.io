@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+{% include /head.html %}
+
+<body id="top">
+
+    {% include /header.html %}
+
+    <!-- Banner -->
+    <section id="banner">
+        <div class="inner">
+            <h2>This is YennyBlog</h2>
+            <p>예니블로그에 오신걸 환영합니다</p>
+            <ul class="actions">
+                <li><a href="{{ site.baseurl }}/css.html" class="button big special">CSS</a></li>
+                <li><a href="{{ site.baseurl }}/javascript.html" class="button big alt">JavaScript</a></li>
+            </ul>
+        </div>
+    </section>
+    {{ content }}
+    {% include /footer.html %}
+
+</body>
+
+</html>

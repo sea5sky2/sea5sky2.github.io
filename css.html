@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<!-- Main -->
+<section id="main" class="wrapper style1">
+    <header class="major">
+        <h2>CSS</h2>
+        <p>HTML&CSS</p>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="4u">
+                <section>
+                    <h3>css</h3>
+                    <p>css 관련 공부</p>
+                </section>
+                <hr />
+                <section>
+                    <h3>목록</h3>
+                    <ul class="alt">
+                        {% for post in site.posts %}
+                        {% if post.categories contains "css" %}
+                        <li><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </section>
+            </div>
+            <div class="8u skel-cell-important">
+
+                <!-- 얘는 왜 노출이 안되지... limit:1 안됨... -->
+                {% for post in project-posts limit: 1 %}
+                {% if post.categories contains "css1" %}
+                <section>
+                    <h2>최근포스팅</h2>
+                    <strong>{{post.title}}</strong>
+                    <p>{{ post.excerpt | truncatewords: 45, '...' }}</p>
+                </section>
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+        <hr class="major" />
+        <div class="row">
+            {% for post in site.posts %}
+            {% if post.categories contains "css" %}
+            <div class="6u">
+                <section class="special">
+                    <!-- <a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a> -->
+                    <h3>{{ post.title }}</h3>
+                    <p> {{ post.excerpt }}</p>
+                    <ul class="actions">
+                        <li><a href="{{ site.baseurl }}{{ post.url }}" class="button alt">Read More</a></li>
+                    </ul>
+                </section>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
